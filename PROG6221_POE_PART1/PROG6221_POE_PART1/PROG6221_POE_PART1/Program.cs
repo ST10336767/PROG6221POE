@@ -9,9 +9,10 @@ namespace PROG6221_POE_PART1
 {
     class Program
     {
+       
         static void Main(string[] args)//Main method
         {
-            Recipe recipe = new Recipe();//Initializing the recipe object to null
+            Recipe recipe = new Recipe();//Creating an object of the Recipe class
             bool exit = false;//Boolean variable to control the loop
             while (!exit)//While loop to keep the program running
             {
@@ -27,7 +28,7 @@ namespace PROG6221_POE_PART1
                 switch (choice)//Switch statement to handle the user's choice
                 {
                     case "1"://If the user chooses to add a recipe
-                        recipe = EnterRecipeDetails();//Calling the EnterRecipeDetails method
+                         EnterRecipeDetails();//Calling the EnterRecipeDetails method
                         break;
                     case "2"://If the user chooses to display a recipe
                         recipe.DisplayRecipe();//Calling the DisplayRecipe method
@@ -52,6 +53,18 @@ namespace PROG6221_POE_PART1
             }
         }
 
-        
+        public static void EnterRecipeDetails()//Method to enter the recipe details
+        {
+            Console.WriteLine("Enter the name of the recipe: ");//Prompt the user to enter the name of the recipe
+            String name = Console.ReadLine();//Read the name of the recipe
+
+            int numIngredients = 0;//Variable to store the number of ingredients
+            int numSteps = 0;//Variable to store the number of steps
+            Console.WriteLine("Enter the number of ingredients: ");//Prompt the user to enter the number of ingredients
+            String numOfIngredients = Console.ReadLine();//Read the number of ingredients
+            Console.WriteLine("Enter the number of steps: ");//Prompt the user to enter the number of steps
+            String numOfSteps = Console.ReadLine();//Read the number of steps
+            
+        }
     }
 }
