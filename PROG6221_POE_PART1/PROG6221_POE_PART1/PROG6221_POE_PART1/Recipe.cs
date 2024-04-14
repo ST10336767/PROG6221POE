@@ -42,7 +42,7 @@ namespace PROG6221_POE_PART1
 
         public void DisplayRecipe()//Method to display the recipe
         {
-            if (Ingredients.Length == 0) //Check if the recipe has no ingredients
+            if (Ingredients == null || Ingredients.Length == 0 || recipeName.Equals("")) //Check if the recipe has no ingredients
             {
                 Console.WriteLine("No recipes have been entered. Please enter a recipe and try again.");//Display an error message
             }

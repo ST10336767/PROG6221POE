@@ -12,7 +12,7 @@ namespace PROG6221_POE_PART1
         static Recipe recipe;//Creating an object of the Recipe class
         static void Main(string[] args)//Main method
         {
-            
+            recipe = new Recipe();//Creating an object of the Recipe class
             bool exit = false;//Boolean variable to control the loop
             while (!exit)//While loop to keep the program running
             {
@@ -94,7 +94,7 @@ namespace PROG6221_POE_PART1
                     String unit = Console.ReadLine();//Read the unit
                     new Ingredients(ingredient, quantity, unit);//Creating an object of the Ingredients class
                     recipe.AddIngredient(i, ingredient, quantity, unit);//Calling the AddIngredient method
-  
+                   
                 }
 
                 for (int i = 0; i < numSteps; i++)//Loop to add steps to the recipe
@@ -104,7 +104,7 @@ namespace PROG6221_POE_PART1
                     recipe.AddStep(i, step);//Calling the AddStep method
                 }
 
-                return recipe;//Return the recipe object    
+                return recipe;//Return the recipe object
             }catch(Exception e)
             {
                 Console.WriteLine(e.Message);//Display the error message
