@@ -9,9 +9,9 @@ namespace PROG6221_POE_PART1
 {
     class Program
     {
-        
+
         static void Main(string[] args)//Main method
         {
-            }
+        }
     }
 }
