@@ -28,7 +28,7 @@ namespace PROG6221_POE_PART1
                 switch (choice)//Switch statement to handle the user's choice
                 {
                     case "1"://If the user chooses to add a recipe
-                        EnterRecipeDetails();//Calling the EnterRecipeDetails method
+                         EnterRecipeDetails();//Calling the EnterRecipeDetails method
                         break;
                     case "2"://If the user chooses to display a recipe
                         recipe.DisplayRecipe();//Calling the DisplayRecipe method
@@ -82,13 +82,28 @@ namespace PROG6221_POE_PART1
                     numSteps = Convert.ToInt32(numOfSteps);//Convert the number of steps to an integer
                 }
 
+                Recipe recipe = new Recipe(name, numIngredients, numSteps);//Creating an object of the Recipe class
+
+                for (int i = 0; i < numIngredients; i++)//Loop to add ingredients to the recipe
+                {
+                    Console.WriteLine("Enter ingredient " + (i + 1) + ": ");//Prompt the user to enter the ingredient
+                    String ingredient = Console.ReadLine();//Read the ingredient
+                    Console.WriteLine("Enter quantity: ");//Prompt the user to enter the quantity
+                    double quantity = Convert.ToDouble(Console.ReadLine());//Read the quantity
+                    Console.WriteLine("Enter unit: ");//Prompt the user to enter the unit
+                    String unit = Console.ReadLine();//Read the unit
+                    new Ingredients(ingredient, quantity, unit);//Creating an object of the Ingredients class
+                    recipe.AddIngredient(i, ingredient, quantity, unit);//Calling the AddIngredient method
+ 
+                }
+
                 
             }catch(Exception e)
             {
                 Console.WriteLine(e.Message);//Display the error message
                 EnterRecipeDetails();//Calling the EnterRecipeDetails method
             }
-           
+            
         }
     }
 }
