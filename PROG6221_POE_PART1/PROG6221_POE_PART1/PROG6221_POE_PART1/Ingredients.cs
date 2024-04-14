@@ -8,10 +8,10 @@ namespace PROG6221_POE_PART1
 {
     public class Ingredients
     {
-        public string Name { get; set; }
-        public double Quantity { get; set; }
-        public double OriginalQuantity { get; set; }
-        public string Unit { get; set; }
+        public string Name;
+        public double Quantity;
+        public double OriginalQuantity;
+        public string Unit;
 
         public Ingredients(string name, double quantity, string unit)
         {
@@ -19,6 +19,31 @@ namespace PROG6221_POE_PART1
             Quantity = quantity;
             OriginalQuantity = quantity;
             Unit = unit;
+        }
+
+        public string GetName()
+        {
+            return Name;
+        }
+
+        public double GetQuantity()
+        {
+            return Quantity;
+        }
+
+        public string GetUnit()
+        {
+            return Unit;
+        }
+
+        public void SetQuantity(double quantity)
+        {
+            Quantity = quantity;
+        }
+
+        public void setOriginalQuantity()
+        {
+            Quantity = OriginalQuantity;
         }
 
        
