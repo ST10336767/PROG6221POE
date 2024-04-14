@@ -9,7 +9,7 @@ namespace PROG6221_POE_PART1
 {
     class Program
     {
-       
+        
         static void Main(string[] args)//Main method
         {
             Recipe recipe = new Recipe();//Creating an object of the Recipe class
@@ -97,7 +97,14 @@ namespace PROG6221_POE_PART1
  
                 }
 
-                
+                for (int i = 0; i < numSteps; i++)//Loop to add steps to the recipe
+                {
+                    Console.WriteLine("Enter step " + (i + 1) + ": ");//Prompt the user to enter the step
+                    String step = Console.ReadLine();//Read the step
+                    recipe.AddStep(i, step);//Calling the AddStep method
+                }
+
+                  
             }catch(Exception e)
             {
                 Console.WriteLine(e.Message);//Display the error message
