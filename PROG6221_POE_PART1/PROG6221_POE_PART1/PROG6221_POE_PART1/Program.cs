@@ -9,10 +9,10 @@ namespace PROG6221_POE_PART1
 {
     class Program
     {
-        
+        static Recipe recipe;//Creating an object of the Recipe class
         static void Main(string[] args)//Main method
         {
-            Recipe recipe = new Recipe();//Creating an object of the Recipe class
+            
             bool exit = false;//Boolean variable to control the loop
             while (!exit)//While loop to keep the program running
             {
@@ -28,7 +28,7 @@ namespace PROG6221_POE_PART1
                 switch (choice)//Switch statement to handle the user's choice
                 {
                     case "1"://If the user chooses to add a recipe
-                         EnterRecipeDetails();//Calling the EnterRecipeDetails method
+                        recipe = EnterRecipeDetails();//Calling the EnterRecipeDetails method
                         break;
                     case "2"://If the user chooses to display a recipe
                         recipe.DisplayRecipe();//Calling the DisplayRecipe method
@@ -53,7 +53,7 @@ namespace PROG6221_POE_PART1
             }
         }
 
-        public static void EnterRecipeDetails()//Method to enter the recipe details
+        public static Recipe EnterRecipeDetails()//Method to enter the recipe details
         {      
             Console.WriteLine("Enter the name of the recipe: ");//Prompt the user to enter the name of the recipe
             String name = Console.ReadLine();//Read the name of the recipe
@@ -94,7 +94,7 @@ namespace PROG6221_POE_PART1
                     String unit = Console.ReadLine();//Read the unit
                     new Ingredients(ingredient, quantity, unit);//Creating an object of the Ingredients class
                     recipe.AddIngredient(i, ingredient, quantity, unit);//Calling the AddIngredient method
- 
+  
                 }
 
                 for (int i = 0; i < numSteps; i++)//Loop to add steps to the recipe
@@ -104,13 +104,13 @@ namespace PROG6221_POE_PART1
                     recipe.AddStep(i, step);//Calling the AddStep method
                 }
 
-                  
+                return recipe;//Return the recipe object    
             }catch(Exception e)
             {
                 Console.WriteLine(e.Message);//Display the error message
                 EnterRecipeDetails();//Calling the EnterRecipeDetails method
             }
-            
+            return null;//Return null
         }
     }
 }
